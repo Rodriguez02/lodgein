@@ -1,0 +1,58 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+* {
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+}
+
+
+#topContainer {
+	min-height: 100%;
+	width: 100%;
+}
+
+#navBarContainer{
+    background-color: #000;
+    width: -webkit-fill-available;
+    height: 23vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navBar{
+    position: absolute;
+    left: 3.88%;
+    right: 90.36%;
+    top: 10.18%;   
+    bottom: 92.43%;
+}
+
+.logo img{
+    width: 56px;
+}
+
+.navBar .group{
+    padding: 19px 0px;
+    position: absolute;
+    left: 750px;
+    right: 0px;
+    top: 0px;
+    bottom: 27px;
+}
+
+
+.d-inline-block {
+    display: inline-block!important;
+    width: 39px;
+    height: 31px;
+    margin: 1px;
+}
+
+.nav-link img{
+    width: 25px;
+}
