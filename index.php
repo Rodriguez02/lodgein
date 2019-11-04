@@ -40,22 +40,28 @@ if (isset($_SESSION['userLoggedIn'])) {
         <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Search
+                    <a href="#" class="nav-link">Buscar
                         <img src="assets/images/icons/search.png" class="icon" alt="Search">
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Browse</a>
+                    <a href="#" class="nav-link">Publicar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Favorites</a>
+                    <a href="#" class="nav-link">Favoritos</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Profile</a>
+                    <a href="#" class="nav-link">Perfil</a>
                 </li>
             </ul>
         </div>
     </nav>
+
+    <div id="mainViewContainer">
+        <div id="mainContent">
+            
+        </div>
+    </div>
 </body>
 
 </html>

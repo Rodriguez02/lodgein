@@ -121,10 +121,18 @@
                         <input id="password2" name="password2" type="password" placeholder="Your Password" required>
                     </p>
 
-                    <button type="submit" name="registerButton">Sign Up</button>
+                    <p>
+                        <label for="phoneArea">Phone Area</label>
+                        <input id="phoneArea" name="phoneArea" type="text" placeholder="(03571)" required>
+
+                        <label for="phoneNumber">Phone Area</label>
+                        <input id="phoneNumber" name="phoneNumber" type="text" placeholder="460210" required>
+                    </p>
+
+                    <button type="submit" name="registerButton">Registrarse</button>
 
                     <div class="hasAccountText">
-                        <span id="hideRegister">Already have an account? Log In Here</span>
+                        <span id="hideRegister">Ya tenés una cuenta? Ingresa Acá</span>
                     </div>
 
                 </form>

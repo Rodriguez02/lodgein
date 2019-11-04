@@ -34,7 +34,7 @@
 
             //if everything went fine
             if(empty($this->errorArray)){
-                //insert indo db
+                //insert into db
                 return $this->insertUser($un, $fn, $ln,$em,$pw);
             }
             else{
@@ -54,8 +54,12 @@
             $profilePic = "assets/images/profile-pics/head_esmerald.png";
             $date = date("Y-m-d");
 
-            $result = mysqli_query($this->con,"INSERT INTO users VALUES ('','$un','$fn','$ln','$em','$encryptedPw','$date','$profilePic')");
-            
+            $result = mysqli_query($this->con,"INSERT INTO users VALUES ('','$un','$fn','$ln','$em','$encryptedPw','$date','$profilePic','phoneNumber')");
+            if ($result){
+                echo "BOKITA EL MAS GRANDE";
+            }else{
+                echo "QUE PASO?????????????";
+            }
             return $result;
         }
 
