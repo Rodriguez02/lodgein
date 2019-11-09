@@ -25,7 +25,7 @@
 
 
         
-        public function register($un,$fn,$ln,$em,$em2,$pw,$pw2){
+        public function register($un,$fn,$ln,$em,$em2,$pw,$pw2,$pa,$pn){
             $this->validateUsername($un);
             $this->validateFirstName($fn);
             $this->validateLastName($ln);
@@ -35,7 +35,7 @@
             //if everything went fine
             if(empty($this->errorArray)){
                 //insert into db
-                return $this->insertUser($un, $fn, $ln,$em,$pw);
+                return $this->insertUser($un, $fn, $ln,$em,$pw,$pa,$pn);
             }
             else{
                 return false;
@@ -49,17 +49,12 @@
             return "<span class = 'errorMessage'>$error</span>";
         }
 
-        private function insertUser($un, $fn, $ln,$em,$pw){
+        private function insertUser($un, $fn, $ln,$em,$pw,$pa,$pn){
             $encryptedPw = md5($pw);
             $profilePic = "assets/images/profile-pics/head_esmerald.png";
             $date = date("Y-m-d");
 
             $result = mysqli_query($this->con,"INSERT INTO users VALUES ('','$un','$fn','$ln','$em','$encryptedPw','$date','$profilePic','phoneNumber')");
-            if ($result){
-                echo "BOKITA EL MAS GRANDE";
-            }else{
-                echo "QUE PASO?????????????";
-            }
             return $result;
         }
 
@@ -122,6 +117,10 @@
                 return;
             }
         }
+
+        /*private function validatePhone ($){
+            
+        }*/
         
     }
 

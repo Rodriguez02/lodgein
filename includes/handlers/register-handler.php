@@ -29,14 +29,15 @@ if (isset($_POST['registerButton'])) {
     $email2 = sanitizeFormString($_POST['email2']);
     $password = sanitizeFormPassword($_POST['password']);
     $password2 = sanitizeFormPassword($_POST['password2']);
+    $phone_area = sanitizeFormString($_POST['phoneArea']);
+    $phone_number = sanitizeFormString($_POST['phoneNumber']);
 
-    $wasSuccessful = $account->register($username,$firstName,$lastName,$email,$email2,$password,$password2);
+    $wasSuccessful = $account->register($username,$firstName,$lastName,$email,$email2,$password,$password2,$phone_area,$phone_number);
 
     if ($wasSuccessful){
         $_SESSION['userLoggedIn'] = $username;
-        echo "asdasdasdadasdas";
         //redirect the user to index.php
-        header("Location: index.php");
+        header("Location: register.php");
     }
     else{
         echo $wasSuccessful;
