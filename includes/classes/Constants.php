@@ -1,7 +1,6 @@
 <?php
 class Constants{
     public static $passwordsDoNotMatch = "Your passwords don't match";
-    public static $passwordNotAlphanumeric = "Your password can only contain numbers and letters";
     public static $passwordLength = "Your password must be between 5 and 30 characters";
     public static $emailInvalid = "Email is invalid";
     public static $emailsDontMatch = "Your emails don't match";
@@ -11,6 +10,6 @@ class Constants{
     public static $usernameTaken = "This username already exists";
     public static $emailTaken = "This email is already in use";
     
-    public static $loginFailed = "Your username or password was incorrect";
+    public static $loginFailed = "Usuario o Contraseña Incorrectos";
 }
 ?>

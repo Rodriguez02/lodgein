@@ -14,6 +14,8 @@
 
             $query = mysqli_query($this->con,"SELECT * FROM users WHERE username='$un' AND password='$pw'");
             if (mysqli_num_rows($query) == 1){
+                $un="";
+                $pw="";
                 return true;
             }
             else{
@@ -22,10 +24,8 @@
             }
 
         }
-
-
         
-        public function register($un,$fn,$ln,$em,$em2,$pw,$pw2,$pa,$pn){
+        public function register($un,$fn,$ln,$em,$em2,$pw,$pw2,$pn){
             $this->validateUsername($un);
             $this->validateFirstName($fn);
             $this->validateLastName($ln);
@@ -35,6 +35,14 @@
             //if everything went fine
             if(empty($this->errorArray)){
                 //insert into db
+                $un="";
+                $fn="";
+                $ln="";
+                $em="";
+                $em2="";
+                $pw="";
+                $pw2="";
+                $pn="";
                 return $this->insertUser($un, $fn, $ln,$em,$pw,$pa,$pn);
             }
             else{
@@ -108,20 +116,16 @@
                 array_push($this->errorArray, Constants::$passwordsDoNotMatch);
                 return;
             }
-            if(preg_match('/[^A-Za-z0-9]/',$pw)){
-                array_push($this->errorArray, Constants::$passwordNotAlphanumeric);
-                return;
-            }
             if (strlen($pw) > 30 || strlen($pw) < 5){
                 array_push($this->errorArray, Constants::$passwordLength);
                 return;
             }
         }
 
-        /*private function validatePhone ($){
-            
+        //TODO: agregar esta validacion
+        /*private function validatePhone ($phoneArea,$phoneNumber){
+            if()
         }*/
-        
     }
 
 ?>
