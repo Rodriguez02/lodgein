@@ -154,6 +154,9 @@ function getInputValue($name)
             <div class="txtb">
                 <input id="phoneNumber" name="phoneNumber" type="tel" required autocomplete="off">
                 <span data-placeholder="Teléfono"></span>
+                <span class="error"> 
+                    <?php echo $account->getError(Constants::$phoneInvalid); ?>
+                </span>
             </div>
         </div>
         <button type="submit" name="registerButton" class="logbtn mx-auto">Crear Cuenta</button>

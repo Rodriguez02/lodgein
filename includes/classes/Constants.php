@@ -9,6 +9,7 @@ class Constants{
     public static $usernameLength = "El nombre de usuario debe tener entre 5 y 25 caracteres";
     public static $usernameTaken = "Nombre de usuario ya en uso";
     public static $emailTaken = "Email ya en uso";
+    public static $phoneInvalid = "Número de Teléfono inválido";
     
     public static $loginFailed = "Usuario o Contraseña Incorrectos";
 }
