@@ -43,7 +43,7 @@
                 $pw="";
                 $pw2="";
                 $pn="";
-                return $this->insertUser($un, $fn, $ln,$em,$pw,$pa,$pn);
+                return $this->insertUser($un, $fn, $ln,$em,$pw,$pn);
             }
             else{
                 return false;

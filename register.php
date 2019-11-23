@@ -20,13 +20,30 @@ function getInputValue($name)
 
 <head>
     <title>Bienvenido a LodgeIn</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7f24e46116.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="icon" type="image/jpg" href="img/icono_logo.jpg">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+ -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,bold&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="assets/css/register.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
     <script src="assets/js/register.js"></script>
 </head>
 
@@ -52,17 +69,18 @@ function getInputValue($name)
     }
     ?>
 
-    <div class="alert alert-danger" role="alert">
-        <?php echo $account->getError(Constants::$loginFailed); ?>
-    </div>
-    <form id="loginForm" action="register.php" method="POST" class="login-form needs-validation">
+    <!-- Login Form -->
+    <form id="loginForm" action="register.php" method="POST" class="login-form" novalidate>
         <h2>Login</h2>
-        <!-- <small class="errorMessage"><?php echo $account->getError(Constants::$loginFailed); ?> </small> -->
-        
-        <div class="inputField">
+        <div class="errorMessage mx-auto"><?php echo $account->getError(Constants::$loginFailed); ?> </div>
+
+        <div class="form-group">
             <div class="txtb">
-                <input id="loginUsername" class="form-control save-input" name="loginUsername" type="text" autocomplete="off" required value="<?php getInputValue('loginUsername') ?>">
+                <input id="loginUsername" class="form-control save-input" name="loginUsername" type="email" autocomplete="off" value="<?php getInputValue('loginUsername') ?>" required>
                 <span data-placeholder="Nombre de Usuario"></span>
+            </div>
+            <div class="error">
+                <span></span><?php echo $account->getError(Constants::$loginFailed); ?></span>
             </div>
         </div>
         <div class="txtb">
@@ -70,19 +88,27 @@ function getInputValue($name)
             <span data-placeholder="Contraseña"></span>
         </div>
 
-        <button type="submit" name="loginButton" class="logbtn">Log In</button>
+        <button type="submit" name="loginButton" class="logbtn mx-auto">Ingresar</button>
         <div class="hasAccountText bottom-text">
             Todavía no tenés una cuenta? <a href="javascript:void(0)" id="hideLogin">Registrate</a>
         </div>
 
     </form>
 
+    <!-- Register Form -->
     <form id="registerForm" action="register.php" method="POST" class="register-form">
-        <h2>Crea tu cuenta Gratis</h2>
+        <h2>Crea tu cuenta gratis</h2>
         <div class="form-row">
-            <div class="txtb">
-                <input id="username" class="form-control" name="username" type="text" required autocomplete="off" required value="<?php getInputValue('username') ?>">
+
+        </div>
+        <div class="form-row">
+            <div class="txtb col-5">
+                <input id="username" class="form-control" name="username" type="text" required autocomplete="off" value="<?php getInputValue('username') ?>">
                 <span data-placeholder="Nombre de Usuario"></span>
+                <span class="error">
+                    <?php echo $account->getError(Constants::$usernameTaken); ?>
+                    <?php echo $account->getError(Constants::$usernameLength); ?>
+                </span>
             </div>
         </div>
         <div class="form-row">
@@ -99,6 +125,11 @@ function getInputValue($name)
             <div class="txtb col-5">
                 <input id="email" name="email" type="email" required autocomplete="off" value="<?php getInputValue('email') ?>">
                 <span data-placeholder="Email"></span>
+                <span class="error">
+                    <?php echo $account->getError(Constants::$emailsDontMatch); ?>
+                    <?php echo $account->getError(Constants::$emailInvalid); ?>
+                    <?php echo $account->getError(Constants::$emailTaken); ?>
+                </span>
             </div>
             <div class="txtb col-5">
                 <input id="email2" name="email2" type="email" required autocomplete="off">
@@ -109,6 +140,10 @@ function getInputValue($name)
             <div class="txtb col-5">
                 <input id="password" name="password" type="password" required>
                 <span data-placeholder="Contraseña"></span>
+                <span class="error"> 
+                    <?php echo $account->getError(Constants::$passwordsDoNotMatch); ?>
+                    <?php echo $account->getError(Constants::$passwordLength); ?>
+                </span>
             </div>
             <div class="txtb col-5">
                 <input id="password2" name="password2" type="password" required>
@@ -117,11 +152,11 @@ function getInputValue($name)
         </div>
         <div class="form-row">
             <div class="txtb">
-                <input id="phoneNumber" name="phoneNumber" type="tel" required autocomplete="off" value="<?php getInputValue('phoneNumber') ?>">
+                <input id="phoneNumber" name="phoneNumber" type="tel" required autocomplete="off">
                 <span data-placeholder="Teléfono"></span>
             </div>
         </div>
-        <button type="submit" name="registerButton" class="logbtn">Crear Cuenta</button>
+        <button type="submit" name="registerButton" class="logbtn mx-auto">Crear Cuenta</button>
         <div class="hasAccountText bottom-text">
             Ya tenés una cuenta? <a href="javascript:void(0)" id="hideRegister">Ingresa Acá</a>
         </div>
@@ -130,11 +165,8 @@ function getInputValue($name)
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-    <script>
-        toastr.warning('error','TITULO');
-    </script>
 
-    <script>
+    <!-- <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
             'use strict';
@@ -153,6 +185,11 @@ function getInputValue($name)
                 });
             }, false);
         })();
+    </script> -->
+
+    <script>
+        var forms = document.getElementsByClassName('needs-validation')
+        $('#loginForm').bootstrapValidator();
     </script>
 
     <!-- this controls the text input when clicking on it -->
@@ -163,10 +200,34 @@ function getInputValue($name)
             $("#loginUsername").addClass("focus");
         } */
 
-        if ($(".save-input").val() == "") {
-            $(".save-input").removeClass("focus");
+        if ($("#loginUsername").val() == "") {
+            $("#loginUsername").removeClass("focus");
         } else {
-            $(".save-input").addClass("focus");
+            $("#loginUsername").addClass("focus");
+        }
+
+        if ($("#username").val() == "") {
+            $("#username").removeClass("focus");
+        } else {
+            $("#username").addClass("focus");
+        }
+
+        if ($("#firstName").val() == "") {
+            $("#firstName").removeClass("focus");
+        } else {
+            $("#firstName").addClass("focus");
+        }
+
+        if ($("#lastName").val() == "") {
+            $("#lastName").removeClass("focus");
+        } else {
+            $("#lastName").addClass("focus");
+        }
+
+        if ($("#email").val() == "") {
+            $("#email").removeClass("focus");
+        } else {
+            $("#email").addClass("focus");
         }
 
         $('#mydiv').children('input').each(function() {

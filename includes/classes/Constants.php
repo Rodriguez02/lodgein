@@ -1,14 +1,14 @@
 <?php
 class Constants{
-    public static $passwordsDoNotMatch = "Your passwords don't match";
-    public static $passwordLength = "Your password must be between 5 and 30 characters";
-    public static $emailInvalid = "Email is invalid";
-    public static $emailsDontMatch = "Your emails don't match";
+    public static $passwordsDoNotMatch = "Las Contraseñas no coinciden";
+    public static $passwordLength = "La contraseña debe tener entre 5 y 30 caracteres";
+    public static $emailInvalid = "Email inválido";
+    public static $emailsDontMatch = "Los Emails no coinciden";
     public static $lastNameLength = "Your last name must be between 2 and 25 characters";
     public static $firstNameLength = "Your first name must be between 2 and 25 characters";
-    public static $usernameLength = "Your username must be between 5 and 25 characters";
-    public static $usernameTaken = "This username already exists";
-    public static $emailTaken = "This email is already in use";
+    public static $usernameLength = "El nombre de usuario debe tener entre 5 y 25 caracteres";
+    public static $usernameTaken = "Nombre de usuario ya en uso";
+    public static $emailTaken = "Email ya en uso";
     
     public static $loginFailed = "Usuario o Contraseña Incorrectos";
 }
