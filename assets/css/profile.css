@@ -1,0 +1,153 @@
+/* html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+} */
+
+#background {
+  background-color: #000000;
+  background-image: url(../images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+#profileForm h2 {
+  font-weight: bolder;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.profile-form {
+  width: 360px;
+  background: #f1f1f1;
+  height: 580px;
+  padding: 80px 40px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.form-control:focus{
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.profile-form h2 {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.error{
+	/*display: none;*/
+  margin-left: 10px;
+  margin-top: -1.5em;
+  color: red;
+}		
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+}
+
+.txtb {
+  border-bottom: 2px solid #adadad;
+  position: relative;
+  margin: 30px 0;
+}
+
+.txtb input {
+  font-size: 18px;
+  color: #333;
+  border: none;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 0 5px;
+  height: 40px;
+}
+
+
+.txtb span::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.txtb span::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(120deg, #3498db, #64f5ff);
+  transition: 0.5s;
+  top: 100%;
+  left: 0;
+}
+
+.focus + span::before {
+  top: -5px;
+}
+.focus + span::after {
+  width: 100%;
+}
+
+.logbtn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: linear-gradient(120deg, #3498db, #006eff, #a0ecff);
+  background-size: 200%;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 50px;
+}
+
+.logbtn:hover {
+  background-position: right;
+}
+
+.bottom-text {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.bottom-text a{
+  font-weight: bold;
+}
+
+#profileForm .errorMessage {
+  color: #d90000;
+  font-weight: bolder;
+  margin:auto;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.form-row{
+  margin-top: 10px;
+}
