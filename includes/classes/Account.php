@@ -26,6 +26,12 @@ class Account
         }
     }
 
+    public function getUserInfo($username){
+        $query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$username'");
+        $user = mysqli_fetch_array($query);
+        return $user;
+    }
+
     public function register($un, $fn, $ln, $em, $em2, $pw, $pw2, $pn)
     {
         $this->validateUsername($un);

@@ -6,9 +6,31 @@ html, body {
 
 * {
 	font-family: 'Montserrat', sans-serif;
-	color: #fff;
+	color: rgb(0, 0, 0);
 }
 
+.row{
+    margin-top: 90px;
+}
+
+.btn{
+    border-radius: 20px;
+}
+
+.navbar-brand{
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.nav-link{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card-text {
+    text-align: initial;
+    font-weight: 500;
+}
 
 #topContainer {
 	min-height: 100%;
