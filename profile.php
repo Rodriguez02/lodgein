@@ -18,27 +18,38 @@ $userEmail = $_SESSION['email'];
             <input id="newEmail" class="form-control newEmail" name="newEmail" type="email" autocomplete="off" value="<?php echo $userEmail ?>" required>
             <span data-placeholder="Email"></span>
         </div>
-        <span class="message"></span>
+        <span class="message m1"></span>
         <button class="logbtn mx-auto" onclick="updateEmail('newEmail')">Actualizar Email</button>
     </div>
 
     <div class="form-group">
         <h5>Contraseña</h5>
         <div class="txtb">
-            <input id="passwordOld" name="passwordOld" type="password" value="">
+            <input class="oldPassword" id="oldPassword" name="oldPassword" type="password" value="">
             <span data-placeholder="Contraseña Actual"></span>
         </div>
         <div class="txtb">
-            <input id="passwordNew" name="passwordNew" type="password" value="">
+            <input class="newPassword1" id="newPassword1" name="newPassword1" type="password" value="">
             <span data-placeholder="Contraseña Nueva"></span>
         </div>
         <div class="txtb">
-            <input id="passwordNew2" name="passwordNew2" type="password" value="">
+            <input class="newPassword2" id="newPassword2" name="newPassword2" type="password" value="">
             <span data-placeholder="Confirmar Contraseña"></span>
         </div>
+        <span class="message m2"></span>
+        <button class="logbtn mx-auto" onclick="updatePassword('oldPassword','newPassword1','newPassword2')">Actualizar Contraseña</button>
     </div>
 
-    <button type="submit" name="updateButton" class="logbtn mx-auto">Actualizar Perfil</button>
+    <div class="form-group">
+        <h5>Teléfono</h5>
+        <div class="txtb">
+            <input id="newPhone" class="form-control newPhone" name="newPhone" type="email" autocomplete="off" value="<?php echo $userEmail ?>" required>
+            <span data-placeholder="Email"></span>
+        </div>
+        <span class="message m1"></span>
+        <button class="logbtn mx-auto" onclick="updateEmail('newPhone')">Actualizar Teléfono</button>
+    </div>
+
 </div>
 
 
