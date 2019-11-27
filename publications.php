@@ -23,7 +23,7 @@ $query = mysqli_query($con,("SELECT * FROM lodgings l WHERE l.publisher = '$idUs
     <h2>
         <?php
             if (mysqli_num_rows($query) == 0){
-                echo "No tienes publiciones activas";
+                echo "<h1>No tienes publiciones activas</h1>";
             }
             else{
                 while ($row = mysqli_fetch_array($query)) {
