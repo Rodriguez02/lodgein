@@ -8,6 +8,10 @@ $account = new Account($con);
 include("includes/handlers/register-handler.php");
 include("includes/handlers/login-handler.php");
 
+if (isset($_SESSION['userLoggedIn'])) {
+    header("Location: index.php");
+}
+
 function getInputValue($name)
 {
     if (isset($_POST[$name])) {
@@ -19,9 +23,9 @@ function getInputValue($name)
 <html>
 
 <head>
-    <title>Bienvenido a LodgeIn</title>
+    <title>LodgeIn - Iniciar Sesión</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,regular,medium,bold&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="assets/css/register.css" />
@@ -55,7 +59,7 @@ function getInputValue($name)
     ?>
 
     <!-- Login Form -->
-    <form id="loginForm" action="register.php" method="POST" class="login-form" novalidate>
+    <form id="loginForm" action="register.php" method="POST" class="login-form shadow" novalidate>
         <h2>Login</h2>
         <div class="errorMessage mx-auto"><?php echo $account->getError(Constants::$loginFailed); ?> </div>
 
@@ -73,7 +77,7 @@ function getInputValue($name)
             <span data-placeholder="Contraseña"></span>
         </div>
 
-        <button type="submit" name="loginButton" class="logbtn mx-auto">Ingresar</button>
+        <button type="submit" name="loginButton" class="logbtn mx-auto shadow">Ingresar</button>
         <div class="hasAccountText bottom-text">
             Todavía no tenés una cuenta? <a href="javascript:void(0)" id="hideLogin">Registrate</a>
         </div>
@@ -81,7 +85,7 @@ function getInputValue($name)
     </form>
 
     <!-- Register Form -->
-    <form id="registerForm" action="register.php" method="POST" class="register-form">
+    <form id="registerForm" action="register.php" method="POST" class="register-form shadow">
         <h2>Crea tu cuenta gratis</h2>
         <div class="form-row">
 
@@ -144,7 +148,7 @@ function getInputValue($name)
                 </span>
             </div>
         </div>
-        <button type="submit" name="registerButton" class="logbtn mx-auto">Crear Cuenta</button>
+        <button type="submit" name="registerButton" class="logbtn mx-auto shadow">Crear Cuenta</button>
         <div class="hasAccountText bottom-text">
             Ya tenés una cuenta? <a href="javascript:void(0)" id="hideRegister">Ingresa Acá</a>
         </div>
