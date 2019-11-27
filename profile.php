@@ -3,10 +3,11 @@
 $username = $_SESSION['userLoggedIn'];
 
 // to show the updated data when reloading the page
-$query = mysqli_query($con,"SELECT * FROM users where username = '$username'");
+$query = mysqli_query($con, "SELECT * FROM users where username = '$username'");
 $queryUser = mysqli_fetch_array($query);
 $_SESSION['email'] = $queryUser['email'];
 $userEmail = $_SESSION['email'];
+$userPhone = $queryUser['phone'];
 
 ?>
 
@@ -43,17 +44,24 @@ $userEmail = $_SESSION['email'];
     <div class="form-group">
         <h5>Teléfono</h5>
         <div class="txtb">
-            <input id="newPhone" class="form-control newPhone" name="newPhone" type="email" autocomplete="off" value="<?php echo $userEmail ?>" required>
-            <span data-placeholder="Email"></span>
+            <input id="newPhone" class="form-control newPhone" name="newPhone" type="tel" autocomplete="off" value="<?php echo $userPhone ?>" required>
+            <span data-placeholder="Teléfono"></span>
         </div>
-        <span class="message m1"></span>
-        <button class="logbtn mx-auto" onclick="updateEmail('newPhone')">Actualizar Teléfono</button>
+        <span class="message m3"></span>
+        <button class="logbtn mx-auto" onclick="updatePhone('newPhone')">Actualizar Teléfono</button>
     </div>
 
 </div>
 
 
 <script>
+    
+    if ($("#newPhone").val() == "") {
+        $("#newPhone").removeClass("focus");
+    } else {
+        $("#newPhone").addClass("focus");
+    }
+
     if ($("#newEmail").val() == "") {
         $("#newEmail").removeClass("focus");
     } else {
