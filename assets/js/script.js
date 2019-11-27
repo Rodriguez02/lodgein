@@ -26,3 +26,13 @@ function updatePassword(oldPasswordClass, newPasswordClass1, newPasswordClass2){
         $(".txtb" ).nextAll(".m2").text(response);
     })
 }
+
+function updatePhone (phoneClass){
+    var newPhone = $("."+phoneClass).val();
+    console.log(newPhone);
+    $.post("includes/handlers/updatePhone.php",{phone:newPhone})
+    .done(function(response){
+        console.log(response);
+        $(".txtb").nextAll(".m3").text(response);
+    })
+}
