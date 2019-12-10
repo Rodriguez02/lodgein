@@ -1,3 +1,13 @@
+function openPage(url) {
+
+	if(url.indexOf("?") == -1) {
+		url = url + "?";
+	}
+
+	$("body").scrollTop(0);
+	history.pushState(null, null, url);
+}
+
 function updateEmail(emailClass){
     var emailValue = $("." + emailClass).val();
 
@@ -35,4 +45,18 @@ function updatePhone (phoneClass){
         console.log(response);
         $(".txtb").nextAll(".m3").text(response);
     })
+}
+
+function deletePublication(id){
+    var prompt = confirm("¿Estás seguro que quieres eliminar esta publicación?");
+    if (prompt){
+        $.post("includes/handlers/deletePublication.php",{id:id})
+        .done(function(error){
+            if (error != ""){
+                alert(error);
+                return;
+            }
+            location.reload();
+        })
+    }
 }

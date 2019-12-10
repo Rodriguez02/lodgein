@@ -68,9 +68,6 @@ function getInputValue($name)
                 <input id="loginUsername" class="form-control save-input" name="loginUsername" type="email" autocomplete="off" value="<?php getInputValue('loginUsername') ?>" required>
                 <span data-placeholder="Nombre de Usuario"></span>
             </div>
-            <div class="error">
-                <span></span><?php echo $account->getError(Constants::$loginFailed); ?></span>
-            </div>
         </div>
         <div class="txtb">
             <input id="loginPassword" name="loginPassword" type="password" value="">

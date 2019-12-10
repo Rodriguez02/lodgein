@@ -9,9 +9,9 @@ html, body {
 	color: rgb(0, 0, 0);
 }
 
-.row{
+/* .row{
     margin-top: 90px;
-}
+} */
 
 .btn{
     border-radius: 20px;
@@ -90,4 +90,27 @@ html, body {
 .gridViewItem img{
     max-width: 200px;
     max-height: 200px;
+}
+
+.searchContainer{
+    background-color: #007bff;
+    padding: 35px 35px;
+}
+
+.searchContainer .searchInput{
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+::placeholder {
+    color: white;
+}
+
+input:focus{
+    outline: none;
 }
