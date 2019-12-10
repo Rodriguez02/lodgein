@@ -29,6 +29,8 @@ if (isset($_SESSION['userLoggedIn'])) {
 </head>
 
 <body>
+<div id="mainContent">
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
         <div class="d-flex flex-grow-1">
             <a class="navbar-brand" href="index.php">

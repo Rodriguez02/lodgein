@@ -1,13 +1,14 @@
-function openPage(url) {
+/* function openPage(url) {
 
 	if(url.indexOf("?") == -1) {
 		url = url + "?";
-	}
-
-	$("body").scrollTop(0);
-	history.pushState(null, null, url);
+    }
+    
+	$("#mainContent").load(url);
+    $("body").scrollTop(0);
+    history.pushState(null, null, url);
 }
-
+ */
 function updateEmail(emailClass){
     var emailValue = $("." + emailClass).val();
 
