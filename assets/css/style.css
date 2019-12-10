@@ -6,9 +6,31 @@ html, body {
 
 * {
 	font-family: 'Montserrat', sans-serif;
-	color: #fff;
+	color: rgb(0, 0, 0);
 }
 
+/* .row{
+    margin-top: 90px;
+} */
+
+.btn{
+    border-radius: 20px;
+}
+
+.navbar-brand{
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.nav-link{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card-text {
+    text-align: initial;
+    font-weight: 500;
+}
 
 #topContainer {
 	min-height: 100%;
@@ -68,4 +90,27 @@ html, body {
 .gridViewItem img{
     max-width: 200px;
     max-height: 200px;
+}
+
+.searchContainer{
+    background-color: #007bff;
+    padding: 35px 35px;
+}
+
+.searchContainer .searchInput{
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+::placeholder {
+    color: white;
+}
+
+input:focus{
+    outline: none;
 }

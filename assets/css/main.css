@@ -1948,7 +1948,7 @@
 		button.special,
 		.button.special {
 			border-radius: 50px;
-			background-color: #0083ff;
+			background-color:rgb(1, 162, 255);
 			color: #ffffff !important;
 		}
 
@@ -1957,7 +1957,7 @@
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #08a3eb;
+				background-color: #00c1fc;
 			}
 
 			input[type="submit"].special:active,
@@ -2811,6 +2811,7 @@
 			left: 1.25em;
 			line-height: inherit;
 			margin: 0;
+			margin-left: 2em;
 			padding: 0;
 			position: absolute;
 			top: 0;
@@ -2835,6 +2836,7 @@
 					border-radius: 4px;
 					display: inline-block;
 					margin-left: 2.5em;
+					margin-right: 2.5em;
 					padding-left: 0;
 				}
 
@@ -2846,6 +2848,8 @@
 						color: #666;
 						display: inline-block;
 						text-decoration: none;
+						font-weight: 600;
+						font-size: 20px;
 					}
 
 						#header nav ul li a:hover {
@@ -3126,7 +3130,7 @@
 		@media screen and (max-width: 980px) {
 
 			#banner {
-				padding: 9em 0 7em 0;
+				padding: 11em 0 7em 0;
 			}
 
 		}
@@ -3134,7 +3138,7 @@
 		@media screen and (max-width: 736px) {
 
 			#banner {
-				padding: 6em 2em 6em 2em;
+				padding: 8em 2em 6em 2em;
 			}
 
 				#banner br {
@@ -3154,7 +3158,7 @@
 		@media screen and (max-width: 480px) {
 
 			#banner {
-				padding: 4em 2em 4em 2em;
+				padding: 6em 2em 4em 2em;
 			}
 
 		}
@@ -3178,7 +3182,7 @@
 	#footer {
 		padding: 8em 0 6em 0;
 		background: #f6f6f6;
-		color: #aaa;
+		color: rgba(0, 0, 0, 0.600);
 		text-align: center;
 	}
 
@@ -3192,7 +3196,7 @@
 		}
 
 			#footer a:active, #footer a:hover {
-				color: #666;
+				color: rgb(1, 162, 255);
 			}
 
 		#footer .icons {
@@ -3211,6 +3215,8 @@
 			margin: 2em 0;
 			padding: 0;
 			text-align: center;
+			font-weight: 600;
+			font-size: 15px;
 		}
 
 			#footer .copyright li {
