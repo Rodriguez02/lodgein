@@ -39,11 +39,11 @@
                         <div class='card-body' style='text-align:center;'>
                             <h5 class='card-title text-dark' style='font-weight:bolder'>" . $row['title'] . "</h5>
                             <p class='card-text text-dark'>
-                                <i class='fa fa-home' style='color:black; font-size: 1.5em;'></i> ".$row['type']." <br/><br/>
-                                <i class='fa fa-globe' style='color:black; font-size: 1.5em;'></i>
-                                ".$row['city'].",".$row['state'].",".$row['country']." <br/> <br/>
-                                <i class='fa fa-envelope' style='color:black; font-size: 1em;'></i>  ".$row['email']." <br/>
-                                <i class='fa fa-phone' style='color:black; font-size: 1.2em;'></i>  ".$row['phone']." <br/>
+                                <i class='fa fa-home' style='color:gray; font-size: 1.5em;'></i> ".$row['type']." <br/><br/>
+                                <i class='fa fa-globe' style='color:gray; font-size: 1.5em;'></i>
+                                ".$row['city'].", ".$row['state'].", ".$row['country']." <br/> <br/>
+                                <i class='fa fa-envelope' style='color:gray; font-size: 1em;'></i>  ".$row['email']." <br/>
+                                <i class='fa fa-phone' style='color:gray; font-size: 1.2em;'></i>  ".$row['phone']." <br/>
                             </p>
                             <a href='lodge.php?id=" . $row['id'] . "' class='btn btn-primary'>Información</a>
                         </div>
