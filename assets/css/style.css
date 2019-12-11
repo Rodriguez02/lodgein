@@ -114,3 +114,52 @@ html, body {
 input:focus{
     outline: none;
 }
+
+.lodging{
+    margin: 1em 9em;
+}
+
+.lodging .card{
+    border-radius: 1em;
+}
+
+.lodging .card-img-top{
+    width: 100%;
+    height: 35em;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.profile .card{
+    margin: 4em auto;
+    background-color: transparent;
+    padding: 3em;
+    border-radius: 1em;
+    width: 40em;
+}
+
+.profile .logbtn{
+    width: 44%;
+    font-weight: 500;
+}
+
+.profile .txtb{
+    width: 50%;
+}
+
+.profile .card>hr{
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+#modifyProfile{
+    text-align: center;
+    font-weight: 800;
+    margin-top: 1em;
+}
+
+.logbtn:focus {
+  outline: none;
+}
