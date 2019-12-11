@@ -22,6 +22,7 @@ if (isset($_SESSION['userLoggedIn'])) {
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/profile.css">
 
@@ -46,7 +47,7 @@ if (isset($_SESSION['userLoggedIn'])) {
         <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Buscar
+                    <a href="search.php" class="nav-link">Buscar
                         <img src="assets/images/icons/search.png" class="icon" alt="Search">
                     </a>
                 </li>
