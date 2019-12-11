@@ -42,14 +42,14 @@ $userLoggedIn = $_SESSION['userLoggedIn'];
                 $("body").scrollTop(0);
                 history.pushState(null, null, url);
 
-            }, 1000);
+            }, 500);
         })
     })
 </script>
 
 <?php if($term == "") exit(); ?>
 
-<div class="placesContainer">
+<div>
 
     <?php
     $lodgeQuery = mysqli_query($con, "SELECT l.id as id,
@@ -62,10 +62,11 @@ $userLoggedIn = $_SESSION['userLoggedIn'];
     if (mysqli_num_rows($lodgeQuery) == 0) {
         echo "<span class='noResults'>No se encontraron alojamientos que coincidan con " . $term . "</span>";
     } else {
+        echo "<div class='container'>";
         echo "<div class='row hidden-md-up'>";
         while ($row = mysqli_fetch_array($lodgeQuery)) {
             echo "
-            <div class='col-md-4 py-2'>
+            <div class='col-md-4 py-4'>
                 <div class='card shadow' style='width: 18rem;
                                                 border: none;'>
                     <img src='" . $row['photo'] . "' class='card-img-top'>
@@ -82,6 +83,7 @@ $userLoggedIn = $_SESSION['userLoggedIn'];
             </div>
         ";
         }
+        echo "</div>";
         echo "</div>";
     }
     ?>

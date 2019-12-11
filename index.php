@@ -32,8 +32,8 @@
 
             while ($row = mysqli_fetch_array($lodgeQuery)) {
                 echo "
-                <div class='col-md-4 py-2'>
-                    <div class='card shadow' style='width: 18rem;
+                <div class='col-md-4 py-4'>
+                    <div class='card shadow' style='width: 19rem;
                                                     border: none;'>
                         <img src='" . $row['photo'] . "' class='card-img-top'>
                         <div class='card-body' style='text-align:center;'>
