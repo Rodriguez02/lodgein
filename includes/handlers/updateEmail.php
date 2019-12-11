@@ -19,7 +19,7 @@ if (isset($_POST['email']) && $_POST['email'] != ""){
     }
 
     $updateEmail = mysqli_query($con,"UPDATE users SET email = '$email' WHERE username='$username'");
-    echo "Actualización exitosa";
+    echo "Actualización Exitosa";
 
 }
 else{

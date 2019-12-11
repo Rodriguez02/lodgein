@@ -10,14 +10,14 @@ if (isset($_POST['phone']) && $_POST['phone'] != ""){
     // Check the lenght of number
     // This can be customized if you want phone number from a specific country
     if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) {
-        echo "Teléfono inválido";
+        echo "Teléfono Inválido";
         exit();
     }
 
     $username = $_SESSION['userLoggedIn'];
 
     $updatePhone = mysqli_query($con,"UPDATE users SET phone = '$phone' WHERE username='$username'");
-    echo "Número de Teléfono actualizado";
+    echo "Número de Teléfono Actualizado";
 
 }
 else{
