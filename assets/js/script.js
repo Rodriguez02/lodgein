@@ -20,7 +20,7 @@ function updateEmail(emailClass) {
         .done(function (response) {
             console.log(response);
             if (response == "Actualización Exitosa") {
-                swal.fire({
+                Swal.fire({
                     icon: 'success',
                     title: 'Actualización exitosa',
                 })
@@ -43,6 +43,7 @@ function updatePassword(oldPasswordClass, newPasswordClass1, newPasswordClass2) 
     var oldPassword = $("." + oldPasswordClass).val();
     var newPassword1 = $("." + newPasswordClass1).val();
     var newPassword2 = $("." + newPasswordClass2).val();
+    let wrongResponses = ["Contraseña Incorrecta", "Las Contraseñas no Coinciden", "Por favor complete todos los campos", "No se ingresaron todas las contraseñas","La contraseña debe tener al menos 5 caracteres"];
 
     $.post("includes/handlers/updatePassword.php",
         {
@@ -52,7 +53,18 @@ function updatePassword(oldPasswordClass, newPasswordClass1, newPasswordClass2) 
         })
         .done(function (response) {
             console.log(response);
-            $(".txtb").nextAll(".m2").text(response);
+            if (wrongResponses.includes(response)){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: response
+                })
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Actualización exitosa',
+                })
+            }  
         })
 }
 
@@ -110,5 +122,44 @@ function deletePublication(id) {
             })
 
         }
+    })
+}
+
+function favourite(id){
+    if ($('.click').hasClass("active")) {
+        console.log("delete");
+        delFavourite(id);
+    } else{
+        console.log("add to favourite");
+        addToFavourite(id);
+
+    }
+}
+
+function addToFavourite(id){
+    $.post("includes/handlers/addToFavourite.php",{lodgingId:id})
+    .done(function(error){
+        if (error != ""){
+            Swal.fire({
+                icon: 'info',
+                title: "asdasd"
+            })
+        }
+    })
+}
+
+function delFavourite(id){
+    $.post("includes/handlers/delFavourite.php",{lodgingId:id})
+    .done(function(error){
+        if (error != ""){
+            Swal.fire({
+                icon: 'info',
+                title: "asdasd"
+            })
+        }
+        Swal.fire({
+            icon: 'success',
+            title: 'Eliminado de Favoritos',
+        })
     })
 }
