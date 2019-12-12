@@ -55,7 +55,7 @@ if (isset($_SESSION['userLoggedIn'])) {
                     <a href="#" class="nav-link">Publicar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Favoritos</a>
+                    <a href="favourites.php" class="nav-link">Favoritos</a>
                 </li>
                 <li class="nav-item">
                     <a href="settings.php" class="nav-link">Perfil</a>
