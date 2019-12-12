@@ -27,7 +27,7 @@
     }
 
     if ($newPassword1 != $newPassword2){
-        echo "Las Contraseñas no coinciden";
+        echo "Las Contraseñas no Coinciden";
         exit();
     }
 

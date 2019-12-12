@@ -16,7 +16,7 @@ $userPhone = $queryUser['phone'];
 <div class="profile">
     <div class="card shadow">
         <div class="form-group">
-            <h5>Correo Electrónico</h5>
+            <h4 class="text-center mb-5" style="font-weight: 700;">Correo Electrónico</h4>
             <div class="txtb mx-auto">
                 <input id="newEmail" class="form-control newEmail" name="newEmail" type="email" autocomplete="off" value="<?php echo $userEmail ?>" required>
                 <span data-placeholder="Email"></span>
@@ -28,7 +28,7 @@ $userPhone = $queryUser['phone'];
         <hr>
 
         <div class="form-group">
-            <h5>Contraseña</h5>
+            <h4 class="text-center mb-5 mt-3" style="font-weight: 700;">Contraseña</h4>
             <div class="txtb mx-auto">
                 <input class="oldPassword" id="oldPassword" name="oldPassword" type="password" value="">
                 <span data-placeholder="Contraseña Actual"></span>
@@ -48,7 +48,7 @@ $userPhone = $queryUser['phone'];
         <hr>
 
         <div class="form-group">
-            <h5>Teléfono</h5>
+            <h4 class="text-center mb-5 mt-3" style="font-weight: 700;">Teléfono</h4>
             <div class="txtb mx-auto">
                 <input id="newPhone" class="form-control newPhone" name="newPhone" type="tel" autocomplete="off" value="<?php echo $userPhone ?>" required>
                 <span data-placeholder="Teléfono"></span>
