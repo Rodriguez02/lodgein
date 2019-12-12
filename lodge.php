@@ -7,6 +7,8 @@ if (isset($_GET['id'])) {
     header("location:index.php");
 }
 
+$userId = $_SESSION['idUser'];
+
 // gather all the information about a lodging
 $lodgingQuery = mysqli_query(
     $con,
@@ -19,6 +21,13 @@ $lodgingQuery = mysqli_query(
 );
 
 $lodging = mysqli_fetch_array($lodgingQuery);
+
+$favQuery = mysqli_query($con, "SELECT * FROM favourites f WHERE f.id_lodging = '$lodgingId' and f.id_user = '$userId'");
+if (mysqli_num_rows($favQuery) == 0) {
+    $favs = 0;
+} else {
+    $favs = 1;
+}
 
 ?>
 
@@ -37,17 +46,68 @@ $lodging = mysqli_fetch_array($lodgingQuery);
                 <?php echo $lodging['city'] ?> - <?php echo $lodging['state'] ?> - <?php echo $lodging['country'] ?>
             </p>
             <p class="card-text text-muted">Publicado por: <?php echo $lodging['user'] ?></p>
+
+            <div class="click" onclick="favourite(<?php echo $lodging['id']?>)">
+                <span class="fa fa-star-o"></span>
+                <div class="ring"></div>
+                <div class="ring2"></div>
+                <p class="info">Añadido a Favoritos!</p>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- <div class="card mx-auto" style="width:80%">
-    <img src="..." class="card-img-mid" alt="...">
-    <div class="card-title mx-auto">
-        <h1><?php echo $lodging['title'] ?></h1>
-        <div class="card-body" style="text-align: initial;">
-            <p>Descripción: <br /><?php echo $lodging['description'] ?> </p>
-            <i class='fa fa-home' style='color:black; font-size: 2.5em;'></i> <?php echo $lodging['type'] ?><br /><br />
-        </div>
-    </div>
-</div> -->
+<script>
+    let fav = '<?php echo $favs; ?>'
+    if (fav == 0) {
+        $('.click').removeClass('active')
+        setTimeout(function() {
+            $('.click').removeClass('active-2')
+        }, 30)
+        $('.click').removeClass('active-3')
+        setTimeout(function() {
+            $('span').removeClass('fa-star')
+            $('span').addClass('fa-star-o')
+        }, 0)
+    } else{
+        $('.click').addClass('active')
+            $('.click').addClass('active-2')
+            setTimeout(function() {
+                $('span').addClass('fa-star')
+                $('span').removeClass('fa-star-o')
+            }, 150)
+            setTimeout(function() {
+                $('.click').addClass('active-3')
+            }, 0)
+    }
+</script>
+
+<script>
+    $('.click').click(function() {
+        if ($('span').hasClass("fa-star")) {
+            $('.click').removeClass('active')
+            setTimeout(function() {
+                $('.click').removeClass('active-2')
+            }, 30)
+            $('.click').removeClass('active-3')
+            setTimeout(function() {
+                $('span').removeClass('fa-star')
+                $('span').addClass('fa-star-o')
+            }, 15)
+        } else {
+            $('.click').addClass('active')
+            $('.click').addClass('active-2')
+            setTimeout(function() {
+                $('span').addClass('fa-star')
+                $('span').removeClass('fa-star-o')
+            }, 150)
+            setTimeout(function() {
+                $('.click').addClass('active-3')
+            }, 150)
+            $('.info').addClass('info-tog')
+            setTimeout(function() {
+                $('.info').removeClass('info-tog')
+            }, 1000)
+        }
+    })
+</script>
