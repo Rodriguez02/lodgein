@@ -13,6 +13,29 @@ html, body {
     margin-top: 90px;
 } */
 
+.card{
+    border-radius: 1em;
+}
+
+.card-img-top{
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.title{
+    width: 50%;
+    opacity: 80%;
+    margin: auto;
+}
+
+.title h1{
+    font-weight: 800;
+    color: black;
+    opacity: 80%;
+}
+
 .btn{
     border-radius: 20px;
 }
@@ -91,6 +114,81 @@ html, body {
     max-width: 200px;
     max-height: 200px;
 }
+
+/* INDEX */
+
+.browse-index{
+    position: absolute;
+}
+
+.browse-index img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-top: 1em;
+    opacity: 95%;
+}
+
+.browse-index .browse-btn{
+    position: absolute;
+    z-index: 1;
+    top: 15em;
+    left: 3em;
+    background: white;
+    color: black;
+    width: 9em;
+    font-weight: 800;
+}
+
+.browse-index .text{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 8em;
+    font-weight: 800;
+    font-size: 2.5em;
+    z-index: 1;
+    color: white;
+    text-shadow: 1px 2px 8px black;
+}
+
+.discover{
+    margin-top: 2em;
+    margin-bottom: 3em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+/* .discover .card{
+    height: 8em;
+}
+ */
+.discover .card img{
+    border-radius: 1em;
+    width: 100%;
+    height: 10vw;
+    object-fit: cover;
+}
+
+.discover .card-title{
+    position: relative;
+    top: 0.4em;
+}
+
+.discover h1{
+    font-size: 1.7em;
+    font-weight: 600;
+    opacity: 80%;
+    position: relative;
+    left: 1.3em;
+    top: 0.9em;
+}
+
+.recomendations{
+    position: relative;
+    top: 29em;
+}
+
 /* SEARCH */
 .searchContainer{
     background-color: #007bff;
@@ -135,6 +233,7 @@ input:focus{
 
 /* PROFILE PAGE */
 .profile .card{
+    border: none;
     margin: 4em auto;
     background-color: transparent;
     padding: 3em;
@@ -159,6 +258,7 @@ input:focus{
 #modifyProfile{
     text-align: center;
     font-weight: 800;
+    opacity: 80%;
     margin-top: 1em;
 }
 
@@ -166,15 +266,7 @@ input:focus{
   outline: none;
 }
 
-
-
-
-
-
-
-
-
-
+/* FAVOURITE STAR */
 .click h4 {
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
@@ -279,4 +371,68 @@ input:focus{
 
 .click * {
 	transition: all .32s ease;
+}
+
+.no-gutters{
+    margin-right: -9px;
+    margin-left: 0px;
+}
+
+/* MY PUBLICATIONS */
+.publications .btn{
+    height: 2.5em;
+    font-weight: bold;
+    border-radius: 2em;
+}
+
+.publications .btn{
+    width: 35%;
+    padding: 8px;
+}
+
+.publications .delbtn{
+    height: 2.5em;
+    font-weight: bold;
+    border-radius: 2em;
+}
+
+.publications img{
+    object-fit: cover;
+    height: 100%;
+}
+
+
+/* PROFILE */
+.settings .card{
+    border: none;
+}
+
+.settings h2{
+    font-weight: 800;
+    color: black;
+    opacity: 80%;
+}
+
+.settings .card{
+    border-radius: 1em;
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: linear-gradient(120deg, #3498db, #006eff, #28a7fc);
+    background-size: 200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 50px;
+    padding: 12px;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-position: right;
 }

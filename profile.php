@@ -14,9 +14,9 @@ $userPhone = $queryUser['phone'];
 <h2 id="modifyProfile">Modificar Perfil</h2>
 
 <div class="profile">
-    <div class="card shadow">
+    <div class="card shadow mx-auto">
         <div class="form-group">
-            <h4 class="text-center mb-5" style="font-weight: 700;">Correo Electrónico</h4>
+            <h4 class="text-center mb-5" style="font-weight: 700; opacity: 80%;">Correo Electrónico</h4>
             <div class="txtb mx-auto">
                 <input id="newEmail" class="form-control newEmail" name="newEmail" type="email" autocomplete="off" value="<?php echo $userEmail ?>" required>
                 <span data-placeholder="Email"></span>
@@ -28,7 +28,7 @@ $userPhone = $queryUser['phone'];
         <hr>
 
         <div class="form-group">
-            <h4 class="text-center mb-5 mt-3" style="font-weight: 700;">Contraseña</h4>
+            <h4 class="text-center mb-5 mt-3" style="font-weight: 700; opacity: 80%;">Contraseña</h4>
             <div class="txtb mx-auto">
                 <input class="oldPassword" id="oldPassword" name="oldPassword" type="password" value="">
                 <span data-placeholder="Contraseña Actual"></span>
@@ -48,7 +48,7 @@ $userPhone = $queryUser['phone'];
         <hr>
 
         <div class="form-group">
-            <h4 class="text-center mb-5 mt-3" style="font-weight: 700;">Teléfono</h4>
+            <h4 class="text-center mb-5 mt-3" style="font-weight: 700; opacity: 80%;">Teléfono</h4>
             <div class="txtb mx-auto">
                 <input id="newPhone" class="form-control newPhone" name="newPhone" type="tel" autocomplete="off" value="<?php echo $userPhone ?>" required>
                 <span data-placeholder="Teléfono"></span>
