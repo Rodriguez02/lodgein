@@ -87,7 +87,7 @@ function updatePhone(phoneClass) {
             } else{
                 Swal.fire({
                     icon: 'success',
-                    title: 'Actualización exitosa',
+                    title: 'Actualización Exitosa',
                     text: response
                 })
             }
@@ -160,6 +160,8 @@ function delFavourite(id){
         Swal.fire({
             icon: 'success',
             title: 'Eliminado de Favoritos',
+            timer: 1000,
+            showConfirmButton: false
         })
     })
 }
