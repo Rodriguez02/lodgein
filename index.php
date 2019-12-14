@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col md-3">
                 <div class='card mb-2 mt-4 shadow'>
-                    <div class='row no-gutters'>
+                    <div class='row'>
                         <div class='col-md-5'>
                             <img src='https://images.unsplash.com/photo-1534430480872-3498386e7856?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80' class='card-img'>
                         </div>
@@ -24,7 +24,7 @@
             
             <div class="col md-3">
                 <div class='card mb-3 mt-4 shadow'>
-                    <div class='row no-gutters'>
+                    <div class='row'>
                         <div class='col-md-5'>
                             <img src='https://images.unsplash.com/photo-1559064500-4b4aee013170?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80' class='card-img'>
                         </div>
@@ -41,7 +41,7 @@
             <div class="col md-3">
 
                 <div class='card mb-3 mt-4 shadow'>
-                    <div class='row no-gutters'>
+                    <div class='row'>
                         <div class='col-md-5'>
                             <img src='https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' class='card-img'>
                         </div>
@@ -66,10 +66,10 @@
     </div>
 
     <div class="recomendations">
-        <h1 class="text-center text-dark" style="margin-top: 30px;font-weight: 700;">Recomendaciones</h1>
+        <h1 class="text-center text-dark" style="margin-top: 30px;font-weight: 700;">Te Recomendamos</h1>
 
-        <div class=" container">
-            <div class='row hidden-md-up'>
+        <div class="container">
+            <div class='row'>
                 <?php
                 $lodgeQuery = mysqli_query($con, "SELECT  l.id as id, l.title as title, l.photo as photo, lt.name as type, c.name as city,
                                                 s.name as state, ct.name as country, u.email as email, u.phone as phone

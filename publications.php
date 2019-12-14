@@ -32,11 +32,11 @@ $query = mysqli_query($con, ("SELECT l.id as id, l.title as title, l.photo as ph
             while ($row = mysqli_fetch_array($query)) {
                 echo "
                 <div class='card mb-3 mt-4 shadow' style='max-width: 650px; margin-left: 2em;'>
-                  <div class='row no-gutters'>
-                    <div class='col-md-5 shadow'>
-                      <img src='" . $row['photo'] . "' class='card-img'>
+                  <div class='row'>
+                    <div class='col-md-4'>
+                      <img src='" . $row['photo'] . "' class='card-img shadow'>
                     </div>
-                    <div class='col-md-7'>
+                    <div class='col-md-8'>
                       <div class='card-body'>
                         <h5 class='card-title' style='font-weight:bold;'>" . $row['title'] . "</h5>
                         <p class='card-text'>
@@ -52,11 +52,10 @@ $query = mysqli_query($con, ("SELECT l.id as id, l.title as title, l.photo as ph
                     </div>
                   </div>
                 </div>
+                <hr>
             ";
             }
         }
         ?>
     </div>
-
-
 </div>

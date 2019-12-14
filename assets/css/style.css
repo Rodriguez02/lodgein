@@ -385,6 +385,10 @@ input:focus{
     border-radius: 2em;
 }
 
+.publications .card{
+    border: none;
+}
+
 .publications .btn{
     width: 35%;
     padding: 8px;
@@ -399,6 +403,13 @@ input:focus{
 .publications img{
     object-fit: cover;
     height: 100%;
+    border-radius: 1em;
+}
+
+.publications hr{
+    margin-left: 4em;
+    width: 36em;
+    margin-top: 1.8em;
 }
 
 
@@ -435,4 +446,9 @@ input:focus{
 
 .btn:hover {
     background-position: right;
+}
+
+/* FAVOURITES */
+.favourites{
+    display: flex;
 }
