@@ -47,7 +47,7 @@ if (mysqli_num_rows($favQuery) == 0) {
             </p>
             <p class="card-text text-muted">Publicado por: <?php echo $lodging['user'] ?></p>
 
-            <div class="click" onclick="favourite(<?php echo $lodging['id']?>)">
+            <div class="click" onclick="favourite(<?php echo $lodging['id'] ?>)">
                 <span class="fa fa-star-o"></span>
                 <div class="ring"></div>
                 <div class="ring2"></div>
@@ -56,6 +56,25 @@ if (mysqli_num_rows($favQuery) == 0) {
         </div>
     </div>
 </div>
+
+<div class="card float-right">
+    <div class="row">
+        <div class="col-sm-5">
+            <img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
+        </div>
+        <div class="col-sm-7">
+            <div class="card-block">
+                <!--           <h4 class="card-title">Small card</h4> -->
+                <p>Copy paste the HTML and CSS.</p>
+                <p>Change around the content for awsomenes</p>
+                <br>
+                <a href="#" class="btn btn-primary btn-sm float-right">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 <script>
     let fav = '<?php echo $favs; ?>'
@@ -69,16 +88,16 @@ if (mysqli_num_rows($favQuery) == 0) {
             $('span').removeClass('fa-star')
             $('span').addClass('fa-star-o')
         }, 0)
-    } else{
+    } else {
         $('.click').addClass('active')
-            $('.click').addClass('active-2')
-            setTimeout(function() {
-                $('span').addClass('fa-star')
-                $('span').removeClass('fa-star-o')
-            }, 150)
-            setTimeout(function() {
-                $('.click').addClass('active-3')
-            }, 0)
+        $('.click').addClass('active-2')
+        setTimeout(function() {
+            $('span').addClass('fa-star')
+            $('span').removeClass('fa-star-o')
+        }, 150)
+        setTimeout(function() {
+            $('.click').addClass('active-3')
+        }, 0)
     }
 </script>
 

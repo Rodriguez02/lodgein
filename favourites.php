@@ -5,7 +5,7 @@ $idUser = $_SESSION['idUser'];
 
 $query = mysqli_query($con, ("SELECT * FROM lodgings l WHERE l.publisher = '$idUser'"));
 
-$query = mysqli_query($con,("SELECT l.id lodId, l.title title, l.photo photo
+$query = mysqli_query($con, ("SELECT l.id lodId, l.title title, l.photo photo
 	                            FROM favourites f
                                 JOIN users u
                                 	on f.id_user = u.id
@@ -14,17 +14,17 @@ $query = mysqli_query($con,("SELECT l.id lodId, l.title title, l.photo photo
 
 ?>
 
-<div class="mx-auto">
-    <h1 class="text-center mt-2" style="font-weight:600">Favoritos</h1>
-    
-    <div>
+<h1 class="text-center mt-2" style="font-weight:600">Favoritos</h1>
+
+<div class="favourites container">
+    <div class="row ">
         <?php
         if (mysqli_num_rows($query) == 0) {
             echo "<h1 class='text-center mt-5'>No tienes publiciones en Favoritos</h1>";
         } else {
             while ($row = mysqli_fetch_array($query)) {
                 echo "
-                <div class='col-md-4 py-4'>
+                <div class='col-md-3 py-4'>
                     <div class='card shadow' style='width: 14rem;
                                                     border: none;'>
                         <img src='" . $row['photo'] . "' class='card-img-top'>
@@ -39,6 +39,4 @@ $query = mysqli_query($con,("SELECT l.id lodId, l.title title, l.photo photo
         }
         ?>
     </div>
-
-
 </div>
