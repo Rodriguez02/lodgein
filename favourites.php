@@ -14,7 +14,16 @@ $query = mysqli_query($con, ("SELECT l.id lodId, l.title title, l.photo photo
 
 ?>
 
-<h1 class="text-center mt-2" style="font-weight:600">Favoritos</h1>
+<!-- <svg class="favWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0099ff" fill-opacity="1" d="M0,160L80,154.7C160,149,320,139,480,160C640,181,800,235,960,240C1120,245,1280,203,1360,181.3L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+</svg> -->
+
+<svg class="favWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#0099ff" fill-opacity="1" d="M0,128L80,138.7C160,149,320,171,480,170.7C640,171,800,149,960,144C1120,139,1280,149,1360,154.7L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+</svg>
+
+<h1 class="favouriteTitle text-center">Favoritos</h1>
+
 
 <div class="favourites container">
     <div class="row ">

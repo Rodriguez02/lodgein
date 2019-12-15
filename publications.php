@@ -19,10 +19,12 @@ $query = mysqli_query($con, ("SELECT l.id as id, l.title as title, l.photo as ph
 
 ?>
 
+<svg class="favWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0099ff" fill-opacity="1" d="M0,128L80,138.7C160,149,320,171,480,170.7C640,171,800,149,960,144C1120,139,1280,149,1360,154.7L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+</svg>
 <div class="mx-auto">
     <div class="title">
         <h1 class="text-center mt-5 title">Publicaciones</h1>
-        <hr>
     </div>
     <div class="publications">
         <?php

@@ -32,7 +32,7 @@ if (isset($_SESSION['userLoggedIn'])) {
 <body>
 <div id="mainContent">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="d-flex flex-grow-1">
             <a class="navbar-brand" href="index.php">
                 <img src="./assets/images/icons/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">

@@ -13,8 +13,13 @@ html, body {
     margin-top: 90px;
 } */
 
+.navbar{
+    background-color: #0099ff;
+}
+
 .card{
     border-radius: 1em;
+    border: none;
 }
 
 .card-img-top{
@@ -26,14 +31,15 @@ html, body {
 
 .title{
     width: 50%;
-    opacity: 80%;
+    opacity: 100%;
     margin: auto;
+    margin-bottom: 3em;
 }
 
 .title h1{
-    font-weight: 800;
-    color: black;
-    opacity: 80%;
+    font-weight: 700;
+    color: white;
+    opacity: 100%;
 }
 
 .btn{
@@ -129,6 +135,13 @@ html, body {
     opacity: 95%;
 }
 
+.bottomWave2{
+    position: absolute;
+    margin-bottom: -15em;
+    margin-top: 14em;
+    z-index: -1;
+}
+
 .browse-index .browse-btn{
     position: absolute;
     z-index: 1;
@@ -155,8 +168,8 @@ html, body {
 .discover{
     margin-top: 2em;
     margin-bottom: 3em;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 /* .discover .card{
@@ -172,7 +185,8 @@ html, body {
 
 .discover .card-title{
     position: relative;
-    top: 0.4em;
+    margin-top: 17%;
+    font-size: 1.5em;
 }
 
 .discover h1{
@@ -182,6 +196,7 @@ html, body {
     position: relative;
     left: 1.3em;
     top: 0.9em;
+    margin-bottom: 0.5em;
 }
 
 .recomendations{
@@ -191,7 +206,7 @@ html, body {
 
 /* SEARCH */
 .searchContainer{
-    background-color: #007bff;
+    background-color: #0099ff;
     padding: 35px 35px;
 }
 
@@ -414,8 +429,25 @@ input:focus{
 
 
 /* PROFILE */
+.settings{
+    padding-top: 4em;
+}
+
+.settings .btn{
+    width: 11em;
+    margin: 0px auto;
+}
+
+.bottomWave{
+    position: absolute;
+    margin-bottom: -15em;
+    margin-top: -13em;
+    z-index: -1;
+}
+
 .settings .card{
     border: none;
+    width: 19em;
 }
 
 .settings h2{
@@ -449,6 +481,18 @@ input:focus{
 }
 
 /* FAVOURITES */
+.favouriteTitle{
+    margin-bottom: 3em;
+    margin-top: 1em;
+    color: white;
+    font-weight: 700;
+}
+
+.favWave{
+    position: absolute;
+    z-index: -1;
+}
+
 .favourites{
     display: flex;
 }

@@ -12,7 +12,7 @@ $userLoggedIn = $_SESSION['userLoggedIn'];
 ?>
 
 <div class="searchContainer">
-    <input type="text" class="searchInput" value="<?php echo $term ?>" placeholder="Buscá por ciudad, provincia, estado o usuario" onfocus="this.value = this.value">
+    <input type="text" class="searchInput" value="<?php echo $term ?>" placeholder="Buscá por ciudad, provincia o país" onfocus="this.value = this.value">
 </div>
 
 
