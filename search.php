@@ -49,18 +49,18 @@ $userLoggedIn = $_SESSION['userLoggedIn'];
 
 <?php if($term == "") exit(); ?>
 
-<div>
 
     <?php
     $lodgeQuery = mysqli_query($con, "SELECT l.id as id,
                                             l.title as title,
-                                            l.type as type, l.photo as photo, c.name as city, s.name as state, ct.name as country
+                                            t.name as type, l.photo as photo, c.name as city, s.name as state, ct.name as country
                                         FROM lodgings l JOIN cities c on l.city=c.id JOIN states s on c.state_id=s.id
                                         JOIN countries ct on s.country_id=ct.id
+                                        JOIN lodgings_types t on l.type = t.id
                                         WHERE c.name LIKE '%$term%' or s.name LIKE '%$term%' or ct.name LIKE '%$term%'");
 
     if (mysqli_num_rows($lodgeQuery) == 0) {
-        echo "<span class='noResults'>No se encontraron alojamientos que coincidan con " . $term . "</span>";
+        echo "<div class='noResults text-center'><p>Uff! No pudimos encontrar alojamientos en <br>" . $term . "</p></div>";
     } else {
         echo "<div class='container'>";
         echo "<div class='row hidden-md-up'>";
@@ -75,7 +75,8 @@ $userLoggedIn = $_SESSION['userLoggedIn'];
                         <p class='card-text text-dark'>
                             <i class='fa fa-home' style='color:gray; font-size: 1.5em;'></i> " . $row['type'] . " <br/><br/>
                             <i class='fa fa-globe' style='color:gray; font-size: 1.5em;'></i>
-                            " . $row['city'] . ", " . $row['state'] . ", " . $row['country'] . " <br/> <br/>
+
+                            <div class='cardGeo'>" . $row['city'] . ", " . $row['state'] . ", " . $row['country'] . "</div>
                         </p>
                         <a href='lodge.php?id=" . $row['id'] . "' class='btn btn-primary'>Información</a>
                     </div>
@@ -87,5 +88,3 @@ $userLoggedIn = $_SESSION['userLoggedIn'];
         echo "</div>";
     }
     ?>
-
-</div>

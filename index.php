@@ -96,7 +96,7 @@
                             <p class='card-text text-dark'>
                                 <i class='fa fa-home' style='color:gray; font-size: 1.5em;'></i> " . $row['type'] . " <br/><br/>
                                 <i class='fa fa-globe' style='color:gray; font-size: 1.5em;'></i>
-                                " . $row['city'] . ", " . $row['state'] . ", " . $row['country'] . " <br/> <br/>
+                                <div class='cardGeo'>" . $row['city'] . ", " . $row['state'] . ", " . $row['country'] . "</div>
                             </p>
                             <a href='lodge.php?id=" . $row['id'] . "' class='btn btn-primary'>Información</a>
                         </div>
