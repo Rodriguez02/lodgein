@@ -14,7 +14,7 @@ $lodgingQuery = mysqli_query(
     $con,
     "SELECT l.id    as id   , l.description as description, l.title as title,
             l.photo as photo, lt.name       as type       , c.name as city, 
-            s.name  as state, ct.name       as country    , u.email as email,
+            s.name  as state, ct.name       as country    , u.email as email, l.publisher as idPubliser,
             u.phone as phone, u.username as user
             FROM lodgings l JOIN lodgings_types lt on l.type=lt.id JOIN cities c on l.city = c.id JOIN states s on c.state_id=s.id
             JOIN countries ct on s.country_id=ct.id JOIN users u on l.publisher=u.id where l.id='$lodgingId'"
@@ -47,12 +47,16 @@ if (mysqli_num_rows($favQuery) == 0) {
             </p>
             <p class="card-text text-muted">Publicado por: <?php echo $lodging['user'] ?></p>
 
-            <div class="click" onclick="favourite(<?php echo $lodging['id'] ?>)">
-                <span class="fa fa-star-o"></span>
-                <div class="ring"></div>
-                <div class="ring2"></div>
-                <p class="info">Añadido a Favoritos!</p>
-            </div>
+            <?php
+            if ($lodging['idPubliser'] != $userId){
+                echo    "<div class='click' onclick='favourite(" . $lodging['id'] . ")'>
+                            <span class='fa fa-star-o'></span>
+                            <div class='ring'></div>
+                            <div class='ring2'></div>
+                            <p class='info'>Añadido a Favoritos!</p>
+                        </div>";
+            }
+            ?>
         </div>
     </div>
 </div>
