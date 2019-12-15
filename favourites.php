@@ -10,7 +10,9 @@ $query = mysqli_query($con, ("SELECT l.id lodId, l.title title, l.photo photo
                                 JOIN users u
                                 	on f.id_user = u.id
                                 JOIN lodgings l
-                                	on f.id_lodging = l.id"));
+                                    on f.id_lodging = l.id
+                                WHERE u.id = '$idUser'
+                                "));
 
 ?>
 

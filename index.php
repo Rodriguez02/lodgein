@@ -1,4 +1,8 @@
-<?php include("includes/header.php"); ?>
+<?php include("includes/header.php");
+
+$userId = $_SESSION['idUser'];
+
+?>
 
 
 
@@ -71,7 +75,7 @@
         <div class='row'>
             <?php
             $lodgeQuery = mysqli_query($con, "SELECT  l.id as id, l.title as title, l.photo as photo, lt.name as type, c.name as city,
-                                                s.name as state, ct.name as country, u.email as email, u.phone as phone
+                                                s.name as state, ct.name as country
                                             FROM lodgings l
                                             JOIN lodgings_types lt
                                                 on l.type=lt.id
@@ -81,8 +85,7 @@
                                                 on c.state_id=s.id
                                             JOIN countries ct
                                                 on s.country_id=ct.id
-                                            JOIN users u
-    	                                        on l.publisher=u.id
+                                            WHERE l.publisher != '$userId'
                                                 order by rand() LIMIT 6");
 
             while ($row = mysqli_fetch_array($lodgeQuery)) {
