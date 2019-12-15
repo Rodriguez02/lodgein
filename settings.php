@@ -1,8 +1,8 @@
 <?php include("includes/header.php") ?>
 
 <div class="settings mt-12">
-    <div class="card p-5 shadow mx-auto">
-        <h2 class="text-center mb-5 title">Perfil</h2>
+    <div class="card pt-5 pb-5 shadow mx-auto">
+        <h2 class="text-center mb-5 title"><?php echo $_SESSION['userLoggedIn'];?></h2>
         <a class="btn btn-primary" href="profile.php" role="button">Editar Perfil</a>
         <br />
         <a class="btn btn-primary" href="publications.php" role="button">Mis publicaciones</a>
