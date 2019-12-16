@@ -161,6 +161,10 @@ html, body {
     font-weight: 800;
 }
 
+.recomendations .card-img-top{
+    height: 15em;
+}
+
 .browse-index .text{
     position: absolute;
     top: 50px;
