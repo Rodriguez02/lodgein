@@ -16,6 +16,10 @@ if (isset($_SESSION['userLoggedIn'])) {
     <meta charset="UTF-8">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
     <script src="assets/js/script.js"></script>
@@ -25,6 +29,7 @@ if (isset($_SESSION['userLoggedIn'])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/profile.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/publish.css">
 
     <title>LodgeIn</title>
 </head>
@@ -52,7 +57,7 @@ if (isset($_SESSION['userLoggedIn'])) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Publicar</a>
+                    <a href="publish.php" class="nav-link">Publicar</a>
                 </li>
                 <li class="nav-item">
                     <a href="favourites.php" class="nav-link">Favoritos</a>
