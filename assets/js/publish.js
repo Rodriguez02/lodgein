@@ -84,7 +84,7 @@ function publishSuccess() {
         'Tu publicación ha sido cargada con exito',
         'success'
     ).then(() => {
-        location.href = 'index.php';
+        location.href = 'main.php';
     })
 }
 
