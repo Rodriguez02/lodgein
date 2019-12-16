@@ -44,14 +44,6 @@ class Account
         //if everything went fine
         if (empty($this->errorArray)) {
             //insert into db
-            $un = "";
-            $fn = "";
-            $ln = "";
-            $em = "";
-            $em2 = "";
-            $pw = "";
-            $pw2 = "";
-            $pn = "";
             return $this->insertUser($un, $fn, $ln, $em, $pw, $pn);
         } else {
             return false;
@@ -72,7 +64,7 @@ class Account
         $profilePic = "assets/images/profile-pics/head_esmerald.png";
         $date = date("Y-m-d");
 
-        $result = mysqli_query($this->con, "INSERT INTO users VALUES ('','$un','$fn','$ln','$em','$encryptedPw','$date','$profilePic','$pn')");
+        $result = mysqli_query($this->con, "INSERT INTO users VALUES (null,'$un','$fn','$ln','$em','$encryptedPw','$date','$profilePic','$pn')");
         return $result;
     }
 

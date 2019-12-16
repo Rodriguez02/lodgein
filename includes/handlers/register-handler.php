@@ -39,17 +39,12 @@ if (isset($_POST['registerButton'])) {
     $password2 = sanitizeFormPassword($_POST['password2']);
     $phone_number = sanitizeFormString($_POST['phoneNumber']);
 
-    $wasSuccessful = $account->register($username,$firstName,$lastName,$email,$email2,$password,$password2,$phone_number);
+    $wasSuccessful = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2, $phone_number);
 
-    if ($wasSuccessful){
-        $_SESSION['userLoggedIn'] = $username;
-        //redirect the user to index.php
+    if ($wasSuccessful) {
+        //redirect the user to register.php
         header("Location: register.php");
-    }
-    else{
+    } else {
         echo $wasSuccessful;
     }
 }
-
-
-?>

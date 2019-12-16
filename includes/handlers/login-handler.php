@@ -11,7 +11,7 @@
             $_SESSION['idUser'] = $data['id'];
             $_SESSION['email'] = $data['email'];
             $_SESSION['userLoggedIn'] = $username;
-            header("Location: index.php");
+            header("Location: main.php");
         }
     }
 ?>
