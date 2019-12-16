@@ -9,7 +9,7 @@ include("includes/handlers/register-handler.php");
 include("includes/handlers/login-handler.php");
 
 if (isset($_SESSION['userLoggedIn'])) {
-    header("Location: index.php");
+    header("Location: main.php");
 }
 
 function getInputValue($name)
