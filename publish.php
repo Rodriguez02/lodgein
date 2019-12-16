@@ -24,9 +24,12 @@ if (isset($_POST['publicButton'])) {
                                         FROM lodgings
                                         ORDER BY id DESC
                                         LIMIT 1");
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        $id_lodging = $row['id'] + 1;
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $id_lodging = $row['id'] + 1;
+        }
+    }else{
+        $id_lodging = 1;
     }
 
     $nom_imagen = $_FILES['images']['name'];
