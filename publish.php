@@ -41,18 +41,18 @@ if (isset($_POST['publicButton'])) {
     if (!move_uploaded_file($archivo, $ruta)) {
         echo "No se pudo cargar el archivo";
     }
-    $insert_lodging = mysqli_query($con, "INSERT INTO lodgings VALUES ('','$title', $id_user, '$desc', $tipo_alojamiento, $ciudad, '$ruta')");
+    $insert_lodging = mysqli_query($con, "INSERT INTO lodgings (id, title, publisher, description, type, city, photo) VALUES (null,'$title', $id_user, '$desc', $tipo_alojamiento, $ciudad, '$ruta')") or die(mysqli_error($con));
     if (!$insert_lodging) {
         echo "No se pudo guardar en la base de datos";
-    }
-
-    echo    '<script>swal.fire(
+    } else {
+        echo    '<script>swal.fire(
             "Publicado!",
             "Tu publicación ha sido cargada con éxito",
             "success"
             ).then(() => {
-            location.href = "index.php";
+            location.href = "main.php";
             });</script>';
+    }
 }
 
 ?>
@@ -78,7 +78,7 @@ if (isset($_POST['publicButton'])) {
             <div class="line">
                 <div class="txtc">
                     <select style="background: #f1f1f1" id="tipo_alojamiento" name="tipo_alojamiento" class="form-control" id="tipo_alojamiento" onblur="blurEvent('tipo_alojamiento')" onfocus="eventInput('tipo_alojamiento')">
-                        <option value="" selected disabled hidden>Tipo alojamiento</option>
+                        <option value="" selected disabled hidden></option>
                         <option value="1">Departamento Entero</option>
                         <option value="2">Habitacion de hotel</option>
                         <option value="3">Habitacion de Departamento</option>
