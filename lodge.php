@@ -4,7 +4,7 @@ if (isset($_GET['id'])) {
     $lodgingId = $_GET['id'];
 } else {
     //if there's not an id set
-    header("location:index.php");
+    header("location:main.php");
 }
 
 $userId = $_SESSION['idUser'];
